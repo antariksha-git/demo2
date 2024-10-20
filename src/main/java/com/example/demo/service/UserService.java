@@ -15,8 +15,14 @@ public class UserService {
         return userRepo.save(user);
     }
 
+
     public User registerUser(User user) {
         return userRepo.save(user);
+    }
+
+    public User deleteUser(Long id) {
+        return userRepo.findById(id)
+                .orElse(new User());
     }
 
 }
